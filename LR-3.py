@@ -5,6 +5,15 @@ from sklearn.metrics import mean_squared_error, r2_score
 
 iris = load_iris()
 
+print("Feature Names:")
+print(iris.feature_names)
+
+print("\nDataset Shape:")
+print(iris.data.shape)
+
+print("\nFirst 5 rows of the dataset:")
+print(iris.data[:5])
+
 X = iris.data[:,0].reshape(-1,1)
 
 y = iris.data[:,2]
@@ -16,6 +25,7 @@ model = LinearRegression()
 model.fit(X_train,y_train)
 
 y_pred = model.predict(X_test)
+
 
 print("Intercept:",model.intercept_)
 print("Slope:",model.coef_[0])
